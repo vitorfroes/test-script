@@ -6,7 +6,7 @@ function App() {
     const script = document.createElement("script");
     script.id = "dt-faq-script";
     script.src =
-      "https://faq.directtalk.com.br/1.0/static/dist/dt-faq.js?token=270406db-0a7a-416a-b85c-35409e55f7c6&appearance=0b90f355-7f5f-4c69-b6ba-a2968dccd033";
+      "https://faq.directtalk.com.br/1.0/static/dist/dt-faq.js?token=d4364725-c760-4cc4-9ea0-77fc417861fe&appearance=f4025e75-79b2-4cd0-ad35-cf5f95ea722d";
     script.async = true;
 
     document.getElementById("FAQ").append(script);
