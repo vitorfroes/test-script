@@ -23,9 +23,13 @@ header {
 
 footer {
   background-color: hotpink;
+  height: 5vh;
+}
+
+main {
+  height: 70vh;
 }
 
 p {
   margin: 0;
-  padding: 0.5em;
 }
