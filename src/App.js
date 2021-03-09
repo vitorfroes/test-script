@@ -13,7 +13,7 @@ function App() {
   };
 
   useEffect(() => {
-    injectScript();
+    // injectScript();
   }, []);
 
   return (
