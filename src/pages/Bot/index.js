@@ -6,7 +6,7 @@ const Bot = () => {
       window,
       document,
       "https://cdn-bot.qa.hiplatform.com/dtbot.js?token=87055131-5075-4be2-82ae-e491d39a3338",
-      "&widget=true&tab=true&top=40&text=Alguma%20d%C3%BAvida%3F&textcolor=ffffff&bgcolor=3f23f7&from=right&widgetType=circle&automatic=true'",
+      "",
       "dtbot-script"
     );
   }, []);
