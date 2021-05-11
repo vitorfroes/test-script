@@ -1,7 +1,9 @@
 import { Link, Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Bot from "./pages/Bot";
+import Client from "./pages/Client";
 import Main from "./pages/Main";
+import User from "./pages/User";
 
 function App() {
   return (
@@ -13,7 +15,13 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/bot">About</Link>
+              <Link to="/bot">Bot</Link>
+            </li>
+            <li>
+              <Link to="/user">User</Link>
+            </li>
+            <li>
+              <Link to="/client">Client</Link>
             </li>
           </ul>
         </nav>
@@ -21,6 +29,12 @@ function App() {
         <Switch>
           <Route path="/bot">
             <Bot />
+          </Route>
+          <Route path="/client">
+            <Client />
+          </Route>
+          <Route path="/user">
+            <User />
           </Route>
           <Route path="/">
             <Main />

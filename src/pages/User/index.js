@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 
-const Main = () => {
+const User = () => {
   useEffect(() => {
     const div = document.getElementById("root");
     buildBot(
       div,
       document,
       "https://cdn-bot.qa.hiplatform.com/dtbot.js?token=7f7bec33-1f55-4ced-8f1b-7c204f35e12b",
-      "&widget=true&tab=true&text=Alguma%20d%C3%BAvida%3F&textcolor=ffffff&bgcolor=3d70bd&from=bottomright&widgetType=circle",
+      "&widget=true&tab=true&text=Alguma%20d%C3%BAvida%3F&textcolor=ffffff&bgcolor=3d70bd&from=right&widgetType=circle&iconId=",
       "dtbot-script"
     );
   }, []);
@@ -22,19 +22,17 @@ const Main = () => {
   };
 
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-        <h1>Teste Script</h1>
+        <h1>User</h1>
       </header>
-      <main id="FAQ">
-        Silvio Santos Ipsum Wellintaaammmmmmmmm. Ma o Silvio Santos Ipsum é
-        muitoam interesanteam.
-      </main>
-      <footer>
-        <p>Test Script @2021</p>
-      </footer>
-    </div>
+      <p>Teste</p>
+      <p>Teste</p>
+      <p>Teste</p>
+      <p>Teste</p>
+      <p>Teste</p>
+    </>
   );
 };
 
-export default Main;
+export default User;
