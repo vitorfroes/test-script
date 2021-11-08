@@ -13,21 +13,21 @@
     <title>Test Script</title>
   </head>
   <body>
-    <!-- Messenger Plugin de bate-papo Code -->
+    <!-- Messenger Chat Plugin Code -->
     <div id="fb-root"></div>
 
-    <!-- Your Plugin de bate-papo code -->
+    <!-- Your Chat Plugin code -->
     <div id="fb-customer-chat" class="fb-customerchat"></div>
 
     <script>
       var chatbox = document.getElementById("fb-customer-chat");
-      chatbox.setAttribute("page_id", "105544031271433");
+      chatbox.setAttribute("page_id", "109805828122769");
       chatbox.setAttribute("attribution", "biz_inbox");
 
       window.fbAsyncInit = function () {
         FB.init({
           xfbml: true,
-          version: "v11.0",
+          version: "v12.0",
         });
       };
 
