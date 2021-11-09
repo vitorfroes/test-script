@@ -1,25 +1,32 @@
-import { useEffect } from "react";
+import { useState } from "react";
 
 const Main = () => {
-  // useEffect(() => {
-  //   const div = document.getElementById("root");
-  //   buildBot(
-  //     div,
-  //     document,
-  //     "https://cdn-bot.qa.hiplatform.com/dtbot.js?token=7f7bec33-1f55-4ced-8f1b-7c204f35e12b",
-  //     "&widget=true&tab=true&text=Alguma%20d%C3%BAvida%3F&textcolor=ffffff&bgcolor=3d70bd&from=bottomright&widgetType=circle",
-  //     "dtbot-script"
-  //   );
-  // }, []);
+  const [logged, setLogged] = useState(false);
 
-  // const buildBot = (h, i, b, o, t) => {
-  //   if (window.HiBot !== undefined) return true;
-  //   var s = i.createElement("script");
-  //   s.src = b + o;
-  //   s.async = true;
-  //   s.id = t;
-  //   h.appendChild(s);
-  // };
+  function handleLogout() {
+    window.FB.logout((response) => {
+      if (!response || response.error) {
+        throw new Error(response.error);
+      } else {
+        setLogged(false);
+      }
+    });
+  }
+
+  function handleLogin() {
+    window.FB.login(
+      (response) => {
+        if (response.status === "connected") {
+          console.log("Success");
+          setLogged(true);
+        }
+      },
+      {
+        scope: "public_profile,email,user_messenger_contact",
+        messenger_page_id: 109805828122769,
+      }
+    );
+  }
 
   return (
     <div className="App">
@@ -29,6 +36,17 @@ const Main = () => {
       <main id="FAQ">
         Silvio Santos Ipsum Wellintaaammmmmmmmm. Ma o Silvio Santos Ipsum é
         muitoam interesanteam.
+        <div>
+          {!logged ? (
+            <button title="Login Facebook" onClick={handleLogin}>
+              Login Facebook
+            </button>
+          ) : (
+            <button title="Logout" onClick={handleLogout}>
+              Logout
+            </button>
+          )}
+        </div>
       </main>
       <footer>
         <p>Test Script @2021</p>
