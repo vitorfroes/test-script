@@ -29,34 +29,17 @@ const Main = () => {
   }
 
   function handleReset() {
-    // const requestUrl = `https://www.facebook.com/v12.0/dialog/oauth?
-    // client_id=1076671459078829
-    // &redirect_uri="https://kind-lichterman-2d9143.netlify.app/"
-    // &auth_type=rerequest
-    // &scope=email,user_messenger_contact
-    // &messenger_page_id=100918475750023
-    // &reset_messenger_state=1`;
-
-    // const headers = new Headers();
-    // const initFetch = {
-    //   method: "GET",
-    //   headers: headers,
-    //   mode: "no-cors",
-    //   cache: "default",
-    // };
-
-    // fetch(requestUrl, initFetch)
-    //   .then((response) => {
-    //     console.log({ response });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
-    window.FB.api(
-      `/oauth?client_id=${1076671459078829}&redirect_uri="https://kind-lichterman-2d9143.netlify.app/"&auth_type=rerequest&scope=email,user_messenger_contact&scope=email,user_messenger_contact&messenger_page_id=${100918475750023}&reset_messenger_state=1`,
+    window.FB.login(
       (response) => {
-        console.log({ response });
+        if (response.status === "connected") {
+          console.log("Success");
+          setLogged(true);
+        }
+      },
+      {
+        scope: "public_profile,email,user_messenger_contact",
+        messenger_page_id: 100918475750023,
+        reset_messenger_state: 1,
       }
     );
   }
