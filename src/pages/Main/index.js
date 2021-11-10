@@ -23,7 +23,7 @@ const Main = () => {
       },
       {
         scope: "public_profile,email,user_messenger_contact",
-        messenger_page_id: 109805828122769,
+        messenger_page_id: 100918475750023,
         reset_messenger_state: 1,
       }
     );
