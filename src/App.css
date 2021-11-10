@@ -27,7 +27,50 @@ footer {
 }
 
 main {
-  height: 75vh;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.reset-btn {
+  background-color: hotpink;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100px;
+}
+
+.reset-btn:hover {
+  color: black;
+}
+
+.login-btn {
+  background-color: turquoise;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 150px;
+}
+
+.login-btn:hover {
+  color: black;
 }
 
 p {
