@@ -54,13 +54,7 @@ const Main = () => {
     //   });
 
     window.FB.api(
-      `/oauth?
-    client_id=${1076671459078829}
-    &redirect_uri="https://kind-lichterman-2d9143.netlify.app/"
-    &auth_type=rerequest&scope=email,user_messenger_contact
-    &scope=email,user_messenger_contact
-    &messenger_page_id=${100918475750023}
-    &reset_messenger_state=1`,
+      `/oauth?client_id=${1076671459078829}&redirect_uri="https://kind-lichterman-2d9143.netlify.app/"&auth_type=rerequest&scope=email,user_messenger_contact&scope=email,user_messenger_contact&messenger_page_id=${100918475750023}&reset_messenger_state=1`,
       (response) => {
         console.log({ response });
       }
