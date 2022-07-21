@@ -1,86 +1,34 @@
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
 const Main = () => {
-  const [logged, setLogged] = useState(false);
+  const divRef = useRef(null);
 
-  function handleLogout() {
-    window.FB.logout((response) => {
-      if (!response || response.error) {
-        throw new Error(response.error);
-      } else {
-        setLogged(false);
-      }
-    });
-  }
+  useEffect(() => {
+    if (divRef) {
+      createScript(divRef.current);
+    }
+  }, []);
 
-  function handleLogin() {
-    window.FB.login(
-      (response) => {
-        if (response.status === "connected") {
-          console.log("Success");
-          setLogged(true);
-        }
-      },
-      {
-        scope: "public_profile,email,user_messenger_contact",
-        messenger_page_id: 100918475750023,
-      }
-    );
-  }
+  const createScript = (elem) => {
+    const script = document.createElement("script");
+    script.id = "dt-faq-script";
+    script.src =
+      "https://faq.directtalk.com.br/1.0/static/dist/v2/dt-faq.js?token=1e237c79-654f-4352-854a-d88ca3292936&appearance=a2187b4d-88b5-42ab-95d6-15ccd116eef9";
 
-  function handleReset() {
-    window.FB.login(
-      (response) => {
-        if (response.status === "connected") {
-          console.log("Success");
-          setLogged(true);
-        }
-      },
-      {
-        scope: "public_profile,email,user_messenger_contact",
-        messenger_page_id: 100918475750023,
-        reset_messenger_state: 1,
-      }
-    );
-  }
+    elem.appendChild(script);
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Teste Script</h1>
       </header>
-      <main id="FAQ">
-        Silvio Santos Ipsum Wellintaaammmmmmmmm. Ma o Silvio Santos Ipsum é
-        muitoam interesanteam.
-        <div>
-          {!logged ? (
-            <button
-              title="Login Facebook"
-              className="login-btn"
-              onClick={handleLogin}
-            >
-              Login Facebook
-            </button>
-          ) : (
-            <button title="Logout" className="login-btn" onClick={handleLogout}>
-              Logout
-            </button>
-          )}
-        </div>
-        <div className="reset">
-          Reset FB Login Connected
-          <button
-            type="button"
-            title="reset"
-            className="reset-btn"
-            onClick={handleReset}
-          >
-            Reset
-          </button>
-        </div>
+      <main>
+        <h2>FAQ</h2>
+        <div id="hi-faq" ref={divRef}></div>
       </main>
       <footer>
-        <p>Test Script @2021</p>
+        <p>Test Script @2022</p>
       </footer>
     </div>
   );
