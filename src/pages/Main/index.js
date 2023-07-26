@@ -28,7 +28,7 @@ const Main = () => {
         <div id="hi-faq" ref={divRef}></div>
       </main>
       <footer>
-        <p>Test Script @2022</p>
+        <p>Test Script @{new Date().getFullYear()}</p>
       </footer>
     </div>
   );
