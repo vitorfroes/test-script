@@ -13,7 +13,7 @@ const Main = () => {
     const script = document.createElement("script");
     script.id = "dt-faq-script";
     script.src =
-      "https://faq.qa.directtalk.com.br/1.0/static/dist/v2/dt-faq.js?token=47aba87a-84a9-4151-a84a-813603ca475c&appearance=f62c3d54-f1f7-4b92-a9b7-37b03dd43d86&goTop=false";
+      "https://faq.directtalk.com.br/1.0/static/dist/v2/dt-faq.js?token=671715a3-f067-493d-a2d0-3c16d9c145e4&appearance=1b4e2c2e-a0fd-4d20-bf7b-7990eedff144&goTop=false";
 
     elem.appendChild(script);
   };
