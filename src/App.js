@@ -4,8 +4,15 @@ import Bot from "./pages/Bot";
 import Client from "./pages/Client";
 import Main from "./pages/Main";
 import User from "./pages/User";
+import mixpanel from "mixpanel-browser";
 
 function App() {
+  mixpanel.init("7b10dddda05e41ad3a600c5b092353c9", {
+    debug: true,
+    track_pageview: true,
+    persistence: "localStorage",
+  });
+
   return (
     <Router>
       <div>
